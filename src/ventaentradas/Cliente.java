@@ -11,7 +11,14 @@ public class Cliente extends Persona {
 
     public boolean ingresar(String usuario, String clave) { return false; }
 
-    @Override public boolean registrarTarjeta() { return false; }
+    @Override
+    public boolean registrarTarjeta() throws TarjetaInvalidaException {
+        if (tarjeta == null) {
+            throw new TarjetaInvalidaException("No hay tarjeta asociada al cliente.");
+        }
+        return true;
+    }
+
     @Override public boolean eliminarTarjeta() { return false; }
     @Override public boolean anularVenta() { return false; }
     @Override public boolean comprar() { return false; }
