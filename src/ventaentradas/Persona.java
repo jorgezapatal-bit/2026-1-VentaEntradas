@@ -13,7 +13,7 @@ public abstract class Persona {
         this.contrasena = contrasena;
     }
 
-    public abstract boolean registrarTarjeta();
+    public abstract boolean registrarTarjeta() throws TarjetaInvalidaException;
     public abstract boolean eliminarTarjeta();
     public abstract boolean anularVenta();
     public abstract boolean comprar();
