@@ -17,7 +17,16 @@ public class Zona {
 
     public boolean generarEntradas() { return false; }
     public Entrada[] mostrarEntrada() { return null; }
-    public Entrada[] venderEntrada(int numero) { return null; }
+
+    public Entrada[] venderEntrada(int numero) throws CapacidadExcedidaException, LimiteEntradasException {
+        if (numero > 4) {
+            throw new LimiteEntradasException("No se puede vender más de 4 entradas por transacción.");
+        }
+        if (entradas.size() + numero > capacidad) {
+            throw new CapacidadExcedidaException("No hay suficiente capacidad en la zona " + nombre);
+        }
+        return null;
+    }
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
