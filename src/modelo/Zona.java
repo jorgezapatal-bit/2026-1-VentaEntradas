@@ -1,31 +1,34 @@
-package ventaentradas;
+package modelo;
 
-import java.util.ArrayList;
+import excepciones.CapacidadExcedidaException;
+import excepciones.LimiteEntradasException;
 
 public class Zona {
     private String nombre;
     private int capacidad;
     private int precio;
-    private ArrayList<Entrada> entradas;
+    private final EntradaArreglo entradas; 
+    private int entradasVendidas; // Para llevar la cuenta manual
 
     public Zona(String nombre, int capacidad, int precio) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.precio = precio;
-        this.entradas = new ArrayList<>();
+        this.entradas = new EntradaArreglo(capacidad);
+        this.entradasVendidas = 0;
     }
-
-    public boolean generarEntradas() { return false; }
-    public Entrada[] mostrarEntrada() { return null; }
 
     public Entrada[] venderEntrada(int numero) throws CapacidadExcedidaException, LimiteEntradasException {
         if (numero > 4) {
             throw new LimiteEntradasException("No se puede vender más de 4 entradas por transacción.");
         }
-        if (entradas.size() + numero > capacidad) {
+        if (this.entradasVendidas + numero > capacidad) {
             throw new CapacidadExcedidaException("No hay suficiente capacidad en la zona " + nombre);
         }
-        return null;
+        
+        // Simular la venta sumando a la cuenta manual
+        this.entradasVendidas += numero;
+        return null; 
     }
 
     public String getNombre() { return nombre; }

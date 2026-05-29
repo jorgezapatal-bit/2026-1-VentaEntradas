@@ -1,4 +1,4 @@
-package ventaentradas;
+package excepciones;
 
 public class TarjetaInvalidaException extends Exception {
     public TarjetaInvalidaException(String message) {

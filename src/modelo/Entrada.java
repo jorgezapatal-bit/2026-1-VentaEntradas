@@ -1,4 +1,4 @@
-package ventaentradas;
+package modelo;
 
 public class Entrada {
     private int numero;

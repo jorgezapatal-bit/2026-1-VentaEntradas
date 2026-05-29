@@ -1,4 +1,4 @@
-package ventaentradas;
+package excepciones;
 
 public class CapacidadExcedidaException extends Exception {
     public CapacidadExcedidaException(String message) {

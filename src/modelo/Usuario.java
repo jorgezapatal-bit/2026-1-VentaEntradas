@@ -1,4 +1,6 @@
-package ventaentradas;
+package modelo;
+
+import modelo.Persona;
 
 public class Usuario extends Persona {
     private boolean estado;

@@ -1,4 +1,6 @@
-package ventaentradas;
+package modelo;
+
+import excepciones.TarjetaInvalidaException;
 
 public class Cliente extends Persona {
     private int puntos;

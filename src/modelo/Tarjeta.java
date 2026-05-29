@@ -1,4 +1,4 @@
-package ventaentradas;
+package modelo;
 
 public class Tarjeta {
     private int numero;
